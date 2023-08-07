@@ -1,5 +1,5 @@
 "use client"
-import React, { FC, forwardRef } from 'react';
+import React, { FC } from 'react';
 import { cn } from '@/lib/utils';
 
 export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {

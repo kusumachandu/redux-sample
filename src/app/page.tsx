@@ -1,14 +1,20 @@
 "use client"
 
+import Button from '@/components/Button';
 import Input from '@/components/Input'
 import { useRef, useState } from 'react'
 
 export default function Home() {
-  const [value, setValue] = useState('');
+  const [value, setValue] = useState<string>('');
+  const [todo, setTodo] = useState<any | undefined>([]);
 
   const handleInputChange = (value: string) => {
-    console.log(value);
     setValue(value);
+  };
+
+  const submitHandler = () => {
+    setTodo([value, ...todo])
+    console.log(todo);
   }
 
   return (
@@ -20,6 +26,9 @@ export default function Home() {
           onChange={handleInputChange}
           placeholder='Enter the todo list here' 
         />
+        <div className='py-5'>
+          <Button className='' onClick={submitHandler}>submit</Button>
+        </div>
       </section>
     </>
   )
