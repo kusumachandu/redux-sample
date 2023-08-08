@@ -4,6 +4,7 @@ import Button from '@/components/Button';
 import Input from '@/components/Input'
 import { useState } from 'react';
 import MyContext from '@/context/MyContext';
+import Card from '@/components/Card';
 
 export default function Home() {
   const [value, setValue] = useState<string>('');
@@ -15,7 +16,6 @@ export default function Home() {
 
   const submitHandler = () => {
     setTodo([value, ...todo])
-    console.log(todo);
   }
 
   return (
@@ -31,6 +31,9 @@ export default function Home() {
         <div className='py-5'>
           <Button className='' onClick={submitHandler}>submit</Button>
         </div>
+      </section>
+      <section className='flex justify-center'>
+        <Card />
       </section>
     </>
     </MyContext.Provider>
