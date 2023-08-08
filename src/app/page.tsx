@@ -2,7 +2,8 @@
 
 import Button from '@/components/Button';
 import Input from '@/components/Input'
-import { useRef, useState } from 'react'
+import { useState } from 'react';
+import MyContext from '@/context/MyContext';
 
 export default function Home() {
   const [value, setValue] = useState<string>('');
@@ -18,6 +19,7 @@ export default function Home() {
   }
 
   return (
+    <MyContext.Provider value={todo}>
     <>
       <h1 className='uppercase font-bold text-slate-100 text-2xl text-center py-2'>Sample-redux</h1>
       <section className='w-1/2 mx-auto py-10'>
@@ -31,5 +33,6 @@ export default function Home() {
         </div>
       </section>
     </>
+    </MyContext.Provider>
   )
 }
