@@ -11,7 +11,8 @@ const Card: FC<CardProps> = ({}) => {
       data?.map((todo: any, index: number) => (
         <li key={index} className='border list-none py-2 px-2 rounded-lg shadow-sm shadow-white flex justify-between items-center'>
           {todo}
-          <div>
+          <div className='flex gap-5'>
+            <Button className='bg-blue-400 font-bold px-5' onClick={() => {}}>edit</Button>
             <Button className='bg-red-400 font-bold' onClick={() => {}}>delete</Button>
           </div>
         </li>
