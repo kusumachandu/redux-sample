@@ -1,4 +1,4 @@
-import { FC, useContext } from 'react'
+import { FC, useContext, useState } from 'react'
 import MyContext from '@/context/MyContext'
 import Button from './Button';
 
@@ -6,6 +6,9 @@ interface CardProps {}
 
 const Card: FC<CardProps> = ({}) => {
   const data = useContext(MyContext);
+
+  const [isOpen, setgIsOpen] = useState(false)
+  
   return <div className='w-1/3 mx-auto'>
     {
       data?.map((todo: any, index: number) => (
