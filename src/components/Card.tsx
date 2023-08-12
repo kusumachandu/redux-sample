@@ -3,15 +3,18 @@ import MyContext from '@/context/MyContext'
 import Button from './Button';
 import PopUp from './PopUp';
 
-interface CardProps {}
+interface CardProps {
+  setIsOpen: (value: any) => void;
+  isOpen: boolean;
+}
 
-const Card: FC<CardProps> = ({}) => {
+const Card: FC<CardProps> = ({ setIsOpen, isOpen}) => {
   const data = useContext(MyContext);
 
-  const [isOpen, setIsOpen] = useState(false);
+  console.log(data)
 
   function openPopup() {
-    setIsOpen(!isOpen);
+    setIsOpen(true);
     console.log('hello')
   }
 
@@ -33,7 +36,7 @@ const Card: FC<CardProps> = ({}) => {
     </div>
     <div className='absolute w-full h-full bg-black top-0'>
       {
-        isOpen && <PopUp setIsOpen={setIsOpen} isOpen={isOpen} />
+        <PopUp setIsOpen={setIsOpen} isOpen={isOpen} />
       }
     </div>
   </div>
