@@ -9,6 +9,12 @@ import Card from '@/components/Card';
 export default function Home() {
   const [value, setValue] = useState<string>('');
   const [todo, setTodo] = useState<any | undefined>([]);
+  const [isOpen, setIsOpen] = useState(false);
+
+  function openPopup() {
+    setIsOpen(false);
+    console.log('hello')
+  }
 
   const handleInputChange = (value: string) => {
     setValue(value);
@@ -33,7 +39,7 @@ export default function Home() {
         </div>
       </section>
       <section className='flex justify-center'>
-        <Card />
+        <Card setIsOpen={setIsOpen} isOpen={isOpen} />
       </section>
     </>
     </MyContext.Provider>

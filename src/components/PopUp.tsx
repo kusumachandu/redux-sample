@@ -9,7 +9,7 @@ interface PopUpProps {
 
 const PopUp: FC<PopUpProps> = ({setIsOpen, isOpen}) => {
   function closePopUp() {
-    setIsOpen(!isOpen);
+    setIsOpen(false);
   }
   return <div className=''>
     <Input
