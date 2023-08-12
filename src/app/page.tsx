@@ -11,11 +11,6 @@ export default function Home() {
   const [todo, setTodo] = useState<any | undefined>([]);
   const [isOpen, setIsOpen] = useState(false);
 
-  function openPopup() {
-    setIsOpen(false);
-    console.log('hello')
-  }
-
   const handleInputChange = (value: string) => {
     setValue(value);
   };
