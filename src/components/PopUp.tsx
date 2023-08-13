@@ -11,14 +11,15 @@ const PopUp: FC<PopUpProps> = ({setIsOpen, isOpen}) => {
   function closePopUp() {
     setIsOpen(!isOpen);
   }
-  return <div className=''>
+  return <div className='w-1/2 py-32 flex flex-col gap-4'>
     <Input
-      value='edit'
+      value='Edit'
       onChange={() => {}}
       placeholder='Enter the todo list here' 
+      className=' mx-auto'
     />
-    <div>
-      <Button className='uppercase' onClick={closePopUp}>close</Button>
+    <div className=''>
+      <Button className='uppercase bg-red-400' onClick={closePopUp}>close</Button>
     </div>
   </div>
 }
