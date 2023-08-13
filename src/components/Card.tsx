@@ -43,7 +43,7 @@ const Card: FC<CardProps> = ({ setIsOpen, isOpen }) => {
           ))}
         </div>
       ) : (
-        <div className='absolute w-full h-full bg-black top-0 flex justify-center items-center'>
+        <div className='absolute w-full h-full bg-black bg-opacity-80 top-0 flex justify-center items-center'>
           {<PopUp setIsOpen={setIsOpen} isOpen={isOpen} />}
         </div>
       )}
