@@ -21,11 +21,11 @@ const Card: FC<CardProps> = ({ setIsOpen, isOpen }) => {
   return (
     <div className='w-full'>
       {isOpen ? (
-        <div className='w-1/3 mx-auto'>
+        <div className='w-1/3 mx-auto flex flex-col gap-3'>
           {data?.map((todo: any, index: number) => (
             <li
               key={index}
-              className='border list-none py-2 px-2 rounded-lg shadow-sm shadow-white flex justify-between items-center'
+              className='border hover:scale-105 duration-300 list-none py-2 px-2 rounded-lg shadow-sm shadow-white flex justify-between items-center'
             >
               {todo}
               <div className='flex gap-5'>
