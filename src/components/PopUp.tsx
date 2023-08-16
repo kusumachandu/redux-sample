@@ -10,7 +10,8 @@ interface PopUpProps {
 }
 
 const PopUp: FC<PopUpProps> = ({todo, setIsOpen, isOpen}) => {
-  const data = useContext(MyContext);
+  console.log(todo);
+  // const data = useContext(MyContext);
   const [editedTodo, setEditedTodo] = useState(todo);
 
   function closePopUp() {
@@ -20,13 +21,13 @@ const PopUp: FC<PopUpProps> = ({todo, setIsOpen, isOpen}) => {
   function handleTodoEdit(event: React.ChangeEvent<HTMLInputElement>) {
     const newValue = event.target.value;
     console.log("new value", newValue);
-    // setEditedTodo(newValue);
+    setEditedTodo(newValue);
   }
   return <div className='w-1/2 py-32 flex flex-col gap-4'>
-    <Input
+    <input
       value={editedTodo}
       placeholder='Enter the todo list here' 
-      className=' mx-auto'
+      className=' mx-auto w-full rounded-md border border-slate-300 bg-transparent py-2 px-3 text-sm placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 dark:border-slate-700 dark:text-slate-50 dark:focus:ring-slate-400 dark:focus:ring-offset-slate-900'
       onChange={handleTodoEdit}
     />
     <div className=''>

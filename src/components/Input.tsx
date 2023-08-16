@@ -10,7 +10,8 @@ export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> 
 
 const Input: FC<InputProps> = ({ className, value, onChange, ...props}) => {
   function handleChange(event: any){
-    onChange(event?.target.value)
+    console.log(event.target.value)
+    onChange(event);
   }
   return <input
   className={cn(
