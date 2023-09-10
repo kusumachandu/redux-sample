@@ -38,7 +38,7 @@ const TodoList: FC<TodoListProps> = ({}) => {
         </button>
       </div>
       <div className='my-10 mx-10'>
-        <Card todoArray={todoArray} />
+        <Card todoArray={todoArray} setTodoArray={setTodoArray} />
       </div>
     </div>
   )
